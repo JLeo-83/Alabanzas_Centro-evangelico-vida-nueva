@@ -1,5 +1,16 @@
 # Letras y Alabanzas - Centro Evangélico Vida Nueva
 
+---
+
+## 📝 Créditos y Propósito
+
+* **Desarrollado por:** Leinto © 2026
+* **Enfoque del Proyecto:** Herramienta independiente creada por un miembro de la congregación.
+* **Propósito:** Todo el contenido lírico y multimedia se comparte exclusivamente con fines de comunión, edificación espiritual y adoración.
+* **Página oficial de la congregación:** https://mividanueva.org/
+
+---
+
 Plataforma web independiente y no oficial diseñada como herramienta de apoyo para el aprendizaje, ensayo y devoción en el hogar. Este espacio recopila las letras y recursos multimedia de las alabanzas pertenecientes a la congregación del **Centro Evangélico Vida Nueva**.
 
 ---
@@ -49,11 +60,3 @@ Cada alabanza se registra como un objeto estructurado dentro del arreglo de canc
     ]
   ]
 }
-
----
-## Créditos y Propósito
-
-* **Desarrollado por:** Leinto © 2026
-* **Enfoque del Proyecto:** Herramienta independiente creada por un miembro de la congregación.
-* **Propósito:** Todo el contenido lírico y multimedia se comparte exclusivamente con fines de comunión, edificación espiritual y adoración.
-* **Página oficial:**https://mividanueva.org/
