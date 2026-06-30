@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Letra | Centro Evangélico Vida Nueva</title>
+  <link rel="icon" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="assets/favicon.png">
+</head>
+
+<body>
+
+  <div class="top-accent-bar"></div>
+
+  <header class="site-header">
+    <div class="header-left">
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <a href="index.html" class="brand">
+        <img src="assets/logo-full-dark.png" data-logo-dark="assets/logo-full-dark.png"
+          data-logo-light="assets/logo-full-light.png" alt="Centro Evangélico Vida Nueva">
+      </a>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="¿Qué quieres escuchar ahora?" aria-label="Buscar canción">
+      <button class="search-icon-btn" aria-label="Buscar" id="search-btn"><i
+          class="fa-solid fa-magnifying-glass fa-beat-fade" style="color: rgb(126, 126, 126);"></i></button>
+    </div>
+
+    <div class="header-right">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Cambiar tema">☾</button>
+
+    </div>
+  </header>
+
+  <main class="page-container">
+    <a href="canciones.html" class="back-link">← Volver a la lista de Alabanzas</a>
+    <button class="present-mode-btn" id="present-mode-btn">
+      <i class="fa-solid fa-expand"></i> Modo proyección
+    </button>
+    <button class="exit-present-btn" id="exit-present-btn">
+      <i class="fa-solid fa-xmark"></i> Salir
+    </button>
+
+    <div id="lyrics-content">
+      <!-- Contenido generado dinámicamente desde songs.js según el ?id= en la URL -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Leinto. Todas las letras se comparten con fines de adoración.
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="songs.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

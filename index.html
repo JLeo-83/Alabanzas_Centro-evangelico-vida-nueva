@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Evangélico Vida Nueva | Letras y Alabanzas</title>
+  <link rel="icon" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="assets/favicon.png">
+</head>
+
+<body>
+
+  <div class="top-accent-bar"></div>
+
+  <header class="site-header">
+    <div class="header-left">
+      <a href="index.html" class="brand">
+        <img src="assets/logo-full-dark.png" data-logo-dark="assets/logo-full-dark.png"
+          data-logo-light="assets/logo-full-light.png" alt="Centro Evangélico Vida Nueva">
+      </a>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="¿Qué quieres escuchar ahora?" aria-label="Buscar canción"
+        autocomplete="off">
+      <button class="search-icon-btn" aria-label="Buscar" id="search-btn"><i
+          class="fa-solid fa-magnifying-glass fa-beat-fade" style="color: rgb(119, 119, 119);"></i></button>
+    </div>
+
+    <div class="header-right">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Cambiar tema">☾</button>
+
+    </div>
+  </header>
+
+  <main class="page-container">
+
+    <!-- Hero -->
+    <!-- Hero -->
+    <section class="hero-banner">
+      <div class="hero-banner-text">
+        <h2>Alabanzas del Centro Evangélico Vida Nueva</h2>
+        <p>
+          Bienvenido a este espacio no oficial dedicado a recopilar y compartir las letras de las alabanzas de nuestra
+          iglesia, el
+          Centro Evangélico Vida Nueva. Esta página ha sido creada de forma independiente por un miembro de la
+          congregación con el fin de ser una herramienta de apoyo para el aprendizaje y la devoción en nuestros hogares.
+          ¡Disfruta de la música que renueva el alma!
+        </p>
+      </div>
+      <div class="hero-banner-image">
+        <img src="assets/logo-banner.png" alt="Centro Evangélico Vida Nueva">
+      </div>
+    </section>
+
+    <!-- Alabanzas recomendadas -->
+    <section>
+      <h2 class="section-title">Alabanzas recomendadas</h2>
+      <div class="song-grid song-grid-center" id="recommended-grid">
+        <!-- Las tarjetas se generan desde songs.js -->
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Banner de Lista completa -->
+    <section class="promo-banner">
+      <div class="promo-text">
+        <h2>Disfruta de las alabanzas.</h2>
+        <p>La música tiene el poder de renovar el alma y acercarnos más a Dios. He preparado este espacio para que
+          puedas llevar las alabanzas de la iglesia a tu hogar, aprenderte las letras y cantar con entendimiento en tu
+          tiempo devocional. Explora esta lista y alaba al Señor con júbilo.
+        </p>
+        <a href="canciones.html" class="btn-accent">Lista de alabanzas</a>
+      </div>
+      <div class="promo-image">
+        <img src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f842fd9c264f0d0b0ed1b0cc"
+          alt="Musica Vida Nueva Logo">
+      </div>
+    </section>
+
+    <!-- Versículos -->
+    <section class="explore-box">
+      <h3>Versículos Bíblicos</h3>
+      <ul class="explore-list" id="verses-list">
+        <!-- Los versículos se generan dinámicamente desde verses.js -->
+      </ul>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Redes sociales y contacto -->
+    <section class="social-section">
+      <h3>Sigue a Centro Evangélico Vida Nueva</h3>
+      <div class="social-pills">
+
+        <!-- Página web oficial -->
+        <a href="https://mividanueva.org/" target="_blank" class="social-pill">
+          <i class="fa-solid fa-globe fa-spin fa-spin-reverse"
+            style="color: rgb(22, 181, 227); animation-duration: 2s;"></i> Página Oficial
+        </a>
+
+        <!-- YouTube oficial -->
+        <a href="https://www.youtube.com/@mividanuevaoficial/?sub_confirmation=1" target="_blank" class="social-pill">
+          <i class="fa-brands fa-youtube fa-bounce" style="color: rgb(255, 0, 0); animation-duration: 2s;"></i> YouTube
+        </a>
+
+        <!-- Facebook oficial -->
+        <a href="https://www.facebook.com/vidanueva.tf" target="_blank" class="social-pill">
+          <i class="fa-brands fa-square-facebook fa-bounce" style="color: rgb(0, 40, 255); animation-duration: 2s;"></i>
+          Facebook
+        </a>
+
+        <!-- Instagram oficial -->
+        <a href="https://www.instagram.com/cevidanuevaoficial" target="_blank" class="social-pill">
+          <i class="fa-brands fa-instagram fa-bounce" style="color: rgb(167, 0, 251); animation-duration: 2s;"></i>
+          Instagram
+        </a>
+
+        <!-- Spotify oficial -->
+        <a href="https://open.spotify.com/intl-es/artist/13afRy5GSuY65QiKuhhfGy?si=nFUhzkNlSUWDB2R0gCsejA"
+          target="_blank" class="social-pill">
+          <i class="fa-brands fa-spotify fa-bounce" style="color: rgb(13, 255, 0); animation-duration: 2s;"></i> Spotify
+        </a>
+
+        <!-- Correo: abre el cliente de correo del usuario -->
+        <a href="mailto:mividanueva@mividanueva.org" class="social-pill">
+          <i class="fa-solid fa-envelope fa-shake" style="color: rgb(232, 165, 7); animation-duration: 2s;"></i> Correo
+        </a>
+
+        <!-- Teléfono: en celular abre el marcador, en escritorio pregunta con qué app llamar -->
+        <a href="tel:+34922945118" class="social-pill">
+          <i class="fa-solid fa-phone fa-shake" style="color: rgb(0, 255, 8); animation-duration: 2s;"></i> Llamar
+        </a>
+
+        <!-- Ubicación: abre Google Maps con una búsqueda por nombre (cambia el texto de la búsqueda) -->
+        <a href="https://maps.app.goo.gl/bFUDtDxjWZQxiTy56" target="_blank" class="social-pill">
+          <i class="fa-solid fa-location-dot fa-beat-fade" style="color: rgb(255, 208, 0);"></i> Ubicación
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Leinto. Todas las letras se comparten con fines de adoración.
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="songs.js"></script>
+  <script src="verses.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

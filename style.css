@@ -1,0 +1,1155 @@
+/* ============================================================
+   style.css — Estilos compartidos del sitio
+   Centro Evangélico Vida Nueva
+   ============================================================ */
+
+:root {
+  /* ---- Paleta modo oscuro (por defecto) ---- */
+  --bg: #000000;
+  --bg-elevated: #111111;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #232323;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a8a8a8;
+  --text-muted: #777777;
+  --accent: #ff0000ad;
+  /* verde lima, como el logo */
+  --accent-dark: #9bb000;
+  --accent-contrast: #121212;
+  --border-color: #2c2c2c;
+  --color-redes: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --top-bar: #cf2b1f;
+  /* rojo del logo, barra superior */
+  --pill-bg: #4caf2e;
+  /* verde del botón "reproducir" */
+  --danger-red: #c0392b;
+  --link-blue: #2255aa;
+  --lyrics-title: #e2e2e2;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-card: #eceaea;
+  --bg-card-hover: #f0f0ee;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #767676;
+  --accent: #a80909fd;
+  --accent-dark: #5e6e00;
+  --accent-contrast: #ffffff;
+  --border-color: #cecece;
+  --color-redes: #000000;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --top-bar: #cf2b1f;
+  --pill-bg: #3f9e25;
+  --danger-red: #c0392b;
+  --link-blue: #2255aa;
+  --lyrics-title: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Top accent bar ---------- */
+.top-accent-bar {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg,
+      #ff0000 10%,
+      #f19090e3 40%,
+      #ff0000 100%);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 32px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 24px;
+  line-height: 1;
+  padding: 4px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0 14px;
+  height: 44px;
+}
+
+.search-bar input:-webkit-autofill,
+.search-bar input:-webkit-autofill:hover,
+.search-bar input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-elevated) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.search-bar input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Theme toggle switch */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 18px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-card-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible,
+a:focus-visible,
+button:focus-visible,
+.song-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* .user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--bg-elevated);
+  border: 01px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.logo-icon-img {
+  clip-path: circle(50%);
+  border-radius: 50%;
+}
+
+/* ---------- Main container ---------- */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 32px 64px;
+  flex: 1;
+}
+
+/* ---------- Hero banner (home) ---------- */
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-radius: 14px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  padding: 36px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.hero-banner-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-banner-text h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.hero-banner-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.hero-banner-image {
+  flex-shrink: 0;
+  width: 360px;
+}
+
+.hero-banner-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--pill-bg);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+}
+
+/* ---------- Subscribe / promo banner ---------- */
+.promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  border-radius: 14px;
+  padding: 28px 180px 28px 180px;
+  margin-bottom: 32px;
+  overflow: hidden;
+
+  /* Altura fija para que la tarjeta no siga creciendo */
+  height: 280px;
+}
+
+/* Contenedor del bloque izquierdo (Textos + Botón) */
+.promo-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Ocupa el alto total de la tarjeta */
+  flex: 1;
+  /* Toma el espacio disponible de forma fluida */
+  min-width: 0;
+  /* Evita problemas de desbordamiento horizontal */
+}
+
+.promo-text h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.promo-text p {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.7;
+  /* Separación vertical perfecta */
+
+  /* Control de texto largo para evitar el crecimiento del bloque */
+  flex: 1;
+  /* Consume el espacio intermedio */
+  overflow-y: auto;
+  /* Genera scroll vertical si el texto es muy largo */
+
+  /* MEJORA: Espacio de seguridad para que el texto no choque con la barra de scroll */
+  padding-right: 14px;
+}
+
+.btn-accent {
+  display: inline-block;
+  background-color: #ff0000;
+  color: var(--accent-contrast);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+
+  /* Alineaciones de Flexbox */
+  margin-top: auto;
+  /* Se sujeta firmemente a la parte inferior */
+  align-self: flex-start;
+  /* Evita que el botón se estire a lo ancho */
+}
+
+.btn-accent:hover {
+  background-color: #ff1100c5;
+  transform: translateY(-1px);
+}
+
+.promo-image {
+  flex-shrink: 0;
+  width: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Section titles ---------- */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ---------- Song grid ---------- */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.song-grid-center {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+  gap: 37px;
+  justify-content: center;
+}
+
+.song-card {
+  display: block;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px;
+  transition: background-color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+.song-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: #ff0000;
+  transform: translateY(-3px);
+}
+
+.song-card-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background-color: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-contrast);
+  /* Borde rojo sólido de 2 píxeles */
+}
+
+.song-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.song-card-artist {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Two-column layout (explore / social, home page) ---------- */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 36px 0;
+}
+
+.explore-box {
+  background-color: var(--bg-elevated);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 36px;
+  border: 2px solid var(--accent);
+  /* Borde rojo sólido de 2 píxeles */
+}
+
+.explore-box h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.explore-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.explore-list a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+}
+
+.explore-list a:hover {
+  color: var(--accent);
+}
+
+.social-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ---------- Lyrics page ---------- */
+.lyrics-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.lyrics-header-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lyrics-header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lyrics-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lyrics-title);
+  margin-bottom: 6px;
+}
+
+.lyrics-header .artist-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lyrics-body-wrap {
+  display: flex;
+  gap: 64px;
+  /* más separación entre letra y video */
+  align-items: flex-start;
+  justify-content: space-between;
+  /* empuja el video hacia la derecha */
+  flex-wrap: wrap;
+}
+
+.lyrics-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.lyrics-stanza {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-primary);
+}
+
+.video-embed-wrap {
+  width: 340px;
+  /* video más pequeño (antes 420px) */
+  flex-shrink: 0;
+  margin-left: auto;
+  /* refuerza que se pegue a la derecha */
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+.video-embed-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+}
+
+/* ---------- Reproductor personalizado (audio local) ---------- */
+.custom-player {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.custom-player-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.75;
+}
+
+.custom-player-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+
+.custom-play-btn,
+.custom-vol-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.custom-time {
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.custom-progress {
+  flex: 1;
+  height: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* ---------- Page title (canciones list page) ---------- */
+.page-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+/* ---------- Fila del título + botón de cambio de vista ---------- */
+.page-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.page-title-row .page-title {
+  margin-bottom: 0;
+}
+
+.view-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.view-toggle-btn:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.view-toggle-btn i {
+  color: var(--text-primary);
+}
+
+/* ---------- Vista de lista (alternativa a la cuadrícula) ---------- */
+.song-grid.view-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.song-grid.view-list .song-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+}
+
+.song-grid.view-list .song-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-grid.view-list .song-card-avatar {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.song-grid.view-list .song-card-title {
+  margin-bottom: 2px;
+}
+
+/* ---------- Verses ---------- */
+/* ---------- Contenedor Padre (El <ul>) ---------- */
+#verses-list {
+  display: grid;
+  /* Crea columnas dinámicas: mínimo 280px de ancho cada una */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  /* Separación entre los bloques */
+  padding: 0;
+  /* Elimina el espacio izquierdo por defecto de las listas */
+  margin: 16px 0 0 0;
+  /* Margen superior para separarlo del h3 */
+  list-style: none;
+  /* Quita las viñetas o puntos de la lista */
+}
+
+/* ---------- Cada Bloque Individual (Los <li>) ---------- */
+.verse-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  /* Fondo sutil para la tarjeta */
+  border-left: 3px solid var(--accent);
+  /* Línea vertical de color a la izquierda */
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Envía la referencia bíblica al fondo del bloque */
+}
+
+/* ---------- Estilos de los Textos Internos ---------- */
+.verse-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 12px;
+  /* Margen inferior para separarlo de la referencia */
+}
+
+.verse-ref {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.social-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--bg-card);
+  /* O el fondo que uses en tus tarjetas */
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  /* Evita el color azul de los enlaces */
+  text-decoration: none;
+  /* Quita el subrayado por defecto */
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Efecto visual cuando el usuario pasa el mouse por encima */
+.social-pill:hover {
+  background-color: var(--color-redes);
+  /* Cambia al color de tu tema al pasar el mouse */
+  color: var(--accent-contrast);
+  transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--text-muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border-color);
+
+  /* ESTA LÍNEA ES CLAVE: */
+  margin-top: auto;
+}
+
+/* ---------- Botón copiar letra ---------- */
+.copy-lyrics-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.copy-lyrics-btn:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.copy-lyrics-btn.copied {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+
+/* ---------- Botón modo proyección ---------- */
+.present-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 12px;
+  margin-bottom: 24px;
+}
+
+.present-mode-btn:hover {
+  background-color: var(--bg-card-hover);
+}
+
+/* ---------- Modo proyección activo ---------- */
+body.presenting .site-header,
+body.presenting .back-link,
+body.presenting .copy-lyrics-btn,
+body.presenting .present-mode-btn,
+body.presenting .lyrics-header-avatar,
+body.presenting .artist-link,
+body.presenting .video-embed-wrap,
+body.presenting .site-footer {
+  display: none !important;
+}
+
+body.presenting {
+  background-color: var(--bg);
+}
+
+body.presenting .page-container {
+  max-width: 100%;
+  padding: 60px;
+}
+
+body.presenting .lyrics-header h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--lyrics-title);
+}
+
+body.presenting .lyrics-body-wrap {
+  justify-content: center;
+}
+
+body.presenting .lyrics-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body.presenting .lyrics-stanza {
+  font-size: 32px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--lyrics-title);
+}
+
+.exit-present-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+body.presenting .exit-present-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---------- Página 404 ---------- */
+.not-found-page {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.not-found-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+}
+
+.not-found-page h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.not-found-page p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* ============================================================
+    Responsive
+   ============================================================ */
+@media (max-width: 1024px) {
+  .song-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .promo-banner {
+    flex-direction: row;
+    /* Alinea el texto e imagen uno abajo del otro */
+    height: auto;
+    /* Permite que crezca de forma natural en móvil */
+    align-items: flex-start;
+    /* Centra los elementos */
+    text-align: left;
+    /* Centra los textos */
+    padding: 20px;
+  }
+
+  .promo-image {
+    width: 140px;
+    /* <--- Reduce el tamaño del logo en móviles */
+    max-width: 100%;
+    /* Evita que se desborde */
+  }
+
+  .video-embed-wrap {
+    width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: none;
+    /* ya no se usa, lo reemplazamos por la búsqueda */
+  }
+
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .song-grid.view-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* En móvil, la barra de búsqueda se colapsa a solo un ícono */
+  .search-bar {
+    flex: 0;
+    max-width: none;
+    border: none;
+    background: none;
+    height: auto;
+    padding: 0;
+  }
+
+  .search-bar input {
+    display: none;
+  }
+
+  .search-bar.search-open {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
+    height: 44px;
+    padding: 0 14px;
+  }
+
+  .hero-banner {
+    flex-direction: column;
+    /* apila texto arriba, imagen abajo */
+    padding: 20px;
+  }
+
+  .hero-banner-image {
+    width: 100%;
+    /* ya no fuerza 360px fijos */
+    order: 2;
+    /* asegura que quede después del texto */
+  }
+
+  .hero-banner-text {
+    order: 1;
+  }
+
+
+  .search-bar.search-open input {
+    display: block;
+  }
+
+  .search-icon-btn {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .song-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .song-card {
+    padding: 12px;
+  }
+
+  .song-card-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .promo-banner {
+    flex-direction: column;
+    /* Alinea el texto e imagen uno abajo del otro */
+    height: auto;
+    /* Permite que crezca de forma natural en móvil */
+    align-items: center;
+    /* Centra los elementos */
+    text-align: left;
+    /* Centra los textos */
+    padding: 20px;
+  }
+
+  .promo-image {
+    width: 140px;
+    /* <--- Reduce el tamaño del logo en móviles */
+    max-width: 100%;
+    /* Evita que se desborde */
+  }
+
+  .lyrics-body-wrap {
+    flex-direction: column;
+  }
+
+  .video-embed-wrap {
+    width: 100%;
+  }
+
+  .explore-box {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .song-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand img {
+    height: 32px;
+  }
+
+  .hero-banner {
+    min-height: 220px;
+  }
+
+  .hero-banner-content {
+    padding: 18px;
+  }
+
+  .hero-pill {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .promo-banner {
+    flex-direction: column;
+    /* Alinea el texto e imagen uno abajo del otro */
+    height: auto;
+    /* Permite que crezca de forma natural en móvil */
+    align-items: center;
+    /* Centra los elementos */
+    text-align: left;
+    /* Centra los textos */
+    padding: 20px;
+  }
+
+  .promo-image {
+    width: 140px;
+    /* <--- Reduce el tamaño del logo en móviles */
+    max-width: 100%;
+    /* Evita que se desborde */
+  }
+
+  .promo-text h2 {
+    font-size: 21px;
+  }
+
+  .lyrics-header h1 {
+    font-size: 21px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
