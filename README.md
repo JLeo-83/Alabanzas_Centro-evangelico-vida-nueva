@@ -4,18 +4,18 @@ Plataforma web independiente y no oficial diseñada como herramienta de apoyo pa
 
 ---
 
-## ✨ Características de la Aplicación
+## Características de la Aplicación
 
-* **Diseño Responsivo e Interactivo:** Interfaz adaptada para dispositivos móviles y de escritorio, optimizada para una lectura cómoda durante la adoración.
+* **Diseño Responsivo e Interactivo:** Interfaz adaptada para dispositivos móviles y de escritorio, optimizada para una lectura cómoda.
 * **Buscador Integrado:** Barra de búsqueda dinámica (`#search-input`) para localizar alabanzas de forma rápida.
 * **Control de Temas (Modo Claro / Oscuro):** Alternancia de estilos visuales mediante un botón interactivo (`#theme-toggle-btn`) que conmuta dinámicamente entre recursos e imágenes claras y oscuras.
-* **Sección de Versículos Dinámicos:** Despliegue automatizado de textos bíblicos para el fortalecimiento espiritual diario.
-* **Catálogo Organizado:** Grid interactivo para alabanzas recomendadas y acceso a la lista completa del repertorio.
+* **Sección de Versículos:** Textos bíblicos para el fortalecimiento espiritual diario.
+* **Catálogo Organizado:** Grid  para alabanzas recomendadas y acceso a la lista completa del repertorio.
 * **Conectividad Oficial:** Enlaces integrados a las plataformas y redes oficiales de la iglesia (Sitio Web, YouTube, Facebook, Instagram, Spotify, Correo, Teléfono y Ubicación en Google Maps).
 
 ---
 
-## 🛠️ Arquitectura y Estructura del Proyecto
+## Arquitectura y Estructura del Proyecto
 
 La aplicación se divide de forma modular en archivos de código limpio y desacoplado para facilitar el mantenimiento:
 
@@ -42,13 +42,15 @@ Cada alabanza se registra como un objeto estructurado dentro del arreglo de canc
   video: "ID_VIDEO_YOUTUBE",
   tipoVideo: "youtube",
   letra: [
+    [ "[♪ ♪ ♪ ♪ ♪ ♪ ♪]" ],
     [
-      "Estrofa de ejemplo"
+      "// Estrofa de ejemplo",
+      "Con marcas de repetición. //"
     ]
   ]
 }
----
 
+---
 ## Créditos y Propósito
 
 * **Desarrollado por:** Leinto © 2026
